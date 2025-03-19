@@ -26,8 +26,8 @@ public class StudentApplication {
             System.out.println("5. Tìm kiếm sinh viên");
             System.out.println("6. Sắp xếp ");
             System.out.println("0. Thoát chương trình ");
-            int choine = validator.validateInputInt(scanner, "Lựa chọn của bạn: ");
-            switch (choine) {
+            int choice = validator.validateInputInt(scanner, "Lựa chọn của bạn: ");
+            switch (choice) {
                 case 1:
                     StudentBusiness.displayListStudent();
                     break;

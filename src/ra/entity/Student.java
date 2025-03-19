@@ -120,7 +120,7 @@ public class Student implements IApp {
             return;
         }
 
-        this.studentId = inputProductId(scanner);
+        this.studentId = inputStudentId(scanner);
 
         System.out.println("Nhập tên sinh viên: ");
         this.studentName = scanner.nextLine();
@@ -150,13 +150,10 @@ public class Student implements IApp {
     }
 
     public String inputStudentId(Scanner scanner) {
-        String productId = StudentValidator.validateStudentId(scanner, "Nhập vào mã sản phẩm", "[SV]\\w{5}");
+        String studentId = StudentValidator.validateStudentId(scanner, "Nhập vào mã sinh viên", "[SV]\\w{5}");
+        return StudentValidator.isStudentExist(scanner, studentId, "studentId");
     }
 
-    public String inputProductName(Scanner scanner) {
-        String productName = Validator.validateInputString(scanner, "Nhập vào tên sản phẩm", new StringRule(10, 100));
-        return ProductValidator.isProductExist(scanner, productName, "productName");
-    }
 
     @Override
     public void displayData() {
